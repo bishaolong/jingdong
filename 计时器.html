@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+
+        span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background: black;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<span class="h1"></span>
+<span class="h2"></span>
+:
+<span class="m1"></span>
+<span class="m2"></span>
+:
+<span class="s1"></span>
+<span class="s2"></span>
+
+</body>
+</html>
+
+<script src="js/zepto.min.js"></script>
+
+<script>
+
+    var i=18000;//5个小时
+
+    setInterval(function(){
+        i=i-1;
+
+        var h=parseInt(i/3600);
+        var m=parseInt(i%3600/60);
+        var s=i%3600%60;
+
+        $(".h1").text(parseInt(h/10))
+        $(".h2").text(h%10);
+
+        $(".m1").text(parseInt(m/10))
+        $(".m2").text(m%10);
+
+        $(".s1").text(parseInt(s/10))
+        $(".s2").text(s%10);
+    },1000)
+
+</script>
